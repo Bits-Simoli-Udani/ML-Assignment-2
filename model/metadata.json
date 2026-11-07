@@ -1,0 +1,103 @@
+{
+    "dataset_name": "Breast Cancer Wisconsin (Diagnostic) Dataset",
+    "source": "UCI Machine Learning Repository / Kaggle",
+    "features": [
+        "mean_radius",
+        "mean_texture",
+        "mean_perimeter",
+        "mean_area",
+        "mean_smoothness",
+        "mean_compactness",
+        "mean_concavity",
+        "mean_concave_points",
+        "mean_symmetry",
+        "mean_fractal_dimension",
+        "radius_error",
+        "texture_error",
+        "perimeter_error",
+        "area_error",
+        "smoothness_error",
+        "compactness_error",
+        "concavity_error",
+        "concave_points_error",
+        "symmetry_error",
+        "fractal_dimension_error",
+        "worst_radius",
+        "worst_texture",
+        "worst_perimeter",
+        "worst_area",
+        "worst_smoothness",
+        "worst_compactness",
+        "worst_concavity",
+        "worst_concave_points",
+        "worst_symmetry",
+        "worst_fractal_dimension"
+    ],
+    "target_col": "target",
+    "target_classes": {
+        "0": "Malignant",
+        "1": "Benign"
+    },
+    "models": {
+        "Logistic Regression": {
+            "metrics": {
+                "Accuracy": 0.9825,
+                "AUC": 0.9954,
+                "Precision": 0.9861,
+                "Recall": 0.9861,
+                "F1": 0.9861,
+                "MCC": 0.9623
+            },
+            "use_scaled": true,
+            "filename": "logistic_regression.joblib"
+        },
+        "Decision Tree": {
+            "metrics": {
+                "Accuracy": 0.9211,
+                "AUC": 0.9163,
+                "Precision": 0.9565,
+                "Recall": 0.9167,
+                "F1": 0.9362,
+                "MCC": 0.8341
+            },
+            "use_scaled": false,
+            "filename": "decision_tree.joblib"
+        },
+        "KNN": {
+            "metrics": {
+                "Accuracy": 0.9561,
+                "AUC": 0.9788,
+                "Precision": 0.9589,
+                "Recall": 0.9722,
+                "F1": 0.9655,
+                "MCC": 0.9054
+            },
+            "use_scaled": true,
+            "filename": "knn.joblib"
+        },
+        "Naive Bayes": {
+            "metrics": {
+                "Accuracy": 0.9386,
+                "AUC": 0.9878,
+                "Precision": 0.9452,
+                "Recall": 0.9583,
+                "F1": 0.9517,
+                "MCC": 0.8676
+            },
+            "use_scaled": false,
+            "filename": "naive_bayes.joblib"
+        },
+        "Support Vector Machine": {
+            "metrics": {
+                "Accuracy": 0.9825,
+                "AUC": 0.995,
+                "Precision": 0.9861,
+                "Recall": 0.9861,
+                "F1": 0.9861,
+                "MCC": 0.9623
+            },
+            "use_scaled": true,
+            "filename": "svm.joblib"
+        }
+    }
+}
