@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BITS Pilani ML Assignment 2 Submission</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 12mm;
+        }
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1F2937;
+            line-height: 1.5;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #1E3A8A;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 20pt;
+            color: #1E3A8A;
+        }
+        .header h2 {
+            margin: 4px 0 0 0;
+            font-size: 13pt;
+            color: #4B5563;
+            font-weight: 500;
+        }
+        .student-meta {
+            margin-top: 8px;
+            font-size: 10pt;
+            color: #6B7280;
+        }
+        h2.section-title {
+            color: #1E3A8A;
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 6px;
+            margin-top: 24px;
+            font-size: 14pt;
+        }
+        .link-box {
+            background-color: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin: 10px 0;
+        }
+        .link-box a {
+            color: #15803D;
+            font-weight: bold;
+            font-size: 11pt;
+            word-break: break-all;
+        }
+        .screenshot-container {
+            border: 2px dashed #9CA3AF;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            margin: 16px 0;
+            background-color: #F9FAFB;
+        }
+        .screenshot-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #D1D5DB;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 9.5pt;
+        }
+        th, td {
+            border: 1px solid #D1D5DB;
+            padding: 8px 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #F3F4F6;
+            color: #111827;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #F9FAFB;
+        }
+        .badge {
+            background-color: #DBEAFE;
+            color: #1E40AF;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 8.5pt;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>BITS Pilani - Work Integrated Learning Programmes Division</h1>
+        <h2>M.Tech (AIML) - Machine Learning (Assignment - 2)</h2>
+    </div>
+
+    <!-- 1. Mandatory GitHub Link -->
+    <h2 class="section-title">1. GitHub Repository Link</h2>
+    <div class="link-box">
+        <b>Repository Link:</b><br>
+        <a href="https://github.com/Bits-Simoli-Udani/ML-Assignment-2" target="_blank">
+            https://github.com/Bits-Simoli-Udani/ML-Assignment-2
+        </a>
+        <p style="margin: 6px 0 0 0; font-size: 9pt; color: #4B5563;">
+            Contains: Complete source code (<code>app.py</code>, <code>train.py</code>), <code>requirements.txt</code>, comprehensive <code>README.md</code>, serialized models (<code>model/</code>), and test dataset (<code>test_data.csv</code>).
+        </p>
+    </div>
+
+    <!-- 2. Mandatory Live Streamlit App Link -->
+    <h2 class="section-title">2. Live Streamlit Application Link</h2>
+    <div class="link-box" style="background-color: #EFF6FF; border-color: #BFDBFE;">
+        <b>Streamlit Community Cloud Link:</b><br>
+        <a href="https://simoli-bits-ml-assignment-2.streamlit.app" target="_blank" style="color: #1D4ED8;">
+            https://simoli-bits-ml-assignment-2.streamlit.app
+        </a>
+        <p style="margin: 6px 0 0 0; font-size: 9pt; color: #4B5563;">
+            Fully interactive web application featuring test CSV upload, model selection dropdown, 6 evaluation metrics display, and visual confusion matrix & classification report without retraining.
+        </p>
+    </div>
+
+    <!-- 3. Mandatory Screenshot of BITS Virtual Lab -->
+    <h2 class="section-title">3. BITS Virtual Lab Execution Proof</h2>
+    <p style="font-size: 9.5pt; color: #4B5563;">
+        Below is the screenshot confirming the execution of the machine learning pipeline within the BITS Virtual Lab environment:
+    </p>
+    <div class="screenshot-container">
+        <img src="Bits_SS.png" alt="BITS Virtual Lab Execution Screenshot" style="max-width: 100%; border: 1px solid #D1D5DB; border-radius: 4px;">
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- 4. Mandatory GitHub README Content -->
+    <h2 class="section-title">4. GitHub README Content (Section 3 - Step 5)</h2>
+
+    <h3>a. Problem Statement</h3>
+    <p style="font-size: 9.5pt; text-align: justify;">
+        The objective of this assignment is to develop, evaluate, and deploy an end-to-end Machine Learning classification pipeline using multiple supervised classification algorithms on an established benchmark dataset. The goal is to accurately classify cell nuclei characteristics from digitized Fine Needle Aspirate (FNA) images of breast masses into <b>Malignant</b> (cancerous) or <b>Benign</b> (non-cancerous). In clinical diagnostics, maximizing discrimination (ROC-AUC), recall/sensitivity (minimizing false negatives), and correlation (MCC) is crucial. Five distinct classifiers are benchmarked across six performance metrics.
+    </p>
+
+    <h3>b. Dataset Description</h3>
+    <ul style="font-size: 9.5pt;">
+        <li><b>Dataset Name:</b> Breast Cancer Wisconsin (Diagnostic) Dataset</li>
+        <li><b>Source Repository:</b> UCI Machine Learning Repository (ID: 17) / Kaggle</li>
+        <li><b>Total Instances:</b> 569 (&ge; 500 instances requirement satisfied)</li>
+        <li><b>Total Features:</b> 30 continuous real-valued numeric attributes (&ge; 12 features requirement satisfied)</li>
+        <li><b>Target Classes:</b> Binary (<code>0: Malignant</code> [212 instances, 37.3%], <code>1: Benign</code> [357 instances, 62.7%])</li>
+        <li><b>Feature Categories:</b> Mean, Standard Error, and "Worst" values calculated for 10 nuclear morphometric properties: Radius, Texture, Perimeter, Area, Smoothness, Compactness, Concavity, Concave Points, Symmetry, and Fractal Dimension.</li>
+        <li><b>Preprocessing:</b> Features standardized using <code>StandardScaler</code> fit exclusively on the 80% stratified training split.</li>
+    </ul>
+
+    <h3>c. GitHub Repository Structure</h3>
+    <p style="font-size: 9.5pt;">
+        The repository is structured strictly according to the assignment requirements:
+    </p>
+    <pre style="background-color: #F3F4F6; padding: 10px; border-radius: 4px; font-size: 8.5pt;">
+ML-Assignment-2/
+|-- app.py                     # Streamlit web application
+|-- requirements.txt           # Dependency specification
+|-- README.md                  # Complete documentation
+|-- test_data.csv              # Hold-out test split (114 samples)
+|-- train.py                   # Model training and artifact serialization script
+|-- model/                     # Serialized models and scaler
+    |-- logistic_regression.joblib
+    |-- decision_tree.joblib
+    |-- knn.joblib
+    |-- naive_bayes.joblib
+    |-- svm.joblib
+    |-- scaler.joblib
+    |-- metadata.json
+    </pre>
+
+    <h3>d. Models Used & Evaluation Metrics Comparison Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ML Model Name</th>
+                <th>Accuracy</th>
+                <th>AUC</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1</th>
+                <th>MCC</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="font-weight: bold; background-color: #EEF2FF;">
+                <td>Logistic Regression</td>
+                <td>0.9825</td>
+                <td>0.9954</td>
+                <td>0.9861</td>
+                <td>0.9861</td>
+                <td>0.9861</td>
+                <td>0.9623</td>
+            </tr>
+            <tr>
+                <td>Decision Tree</td>
+                <td>0.9211</td>
+                <td>0.9163</td>
+                <td>0.9565</td>
+                <td>0.9167</td>
+                <td>0.9362</td>
+                <td>0.8341</td>
+            </tr>
+            <tr>
+                <td>KNN</td>
+                <td>0.9561</td>
+                <td>0.9788</td>
+                <td>0.9589</td>
+                <td>0.9722</td>
+                <td>0.9655</td>
+                <td>0.9054</td>
+            </tr>
+            <tr>
+                <td>Naive Bayes</td>
+                <td>0.9386</td>
+                <td>0.9878</td>
+                <td>0.9452</td>
+                <td>0.9583</td>
+                <td>0.9517</td>
+                <td>0.8676</td>
+            </tr>
+            <tr style="font-weight: bold; background-color: #EEF2FF;">
+                <td>Support Vector Machine</td>
+                <td>0.9825</td>
+                <td>0.9950</td>
+                <td>0.9861</td>
+                <td>0.9861</td>
+                <td>0.9861</td>
+                <td>0.9623</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Observations on Model Performance</h3>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 28%;">ML Model Name</th>
+                <th>Observation about Model Performance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Logistic Regression</b></td>
+                <td>Achieves exceptional performance (<b>Accuracy: 98.25%, AUC: 0.9954, MCC: 0.9623</b>). With standardized inputs, the regularized linear decision boundary isolates benign from malignant samples with only 2 misclassifications out of 114 test instances. High stability, probabilistic calibration, and fast inference.</td>
+            </tr>
+            <tr>
+                <td><b>Decision Tree</b></td>
+                <td>Yields the lowest scores among the five models (<b>Accuracy: 92.11%, AUC: 0.9163, MCC: 0.8341</b>). Orthogonal axis-parallel splits struggle with the strong continuous collinearities between morphological features (e.g., radius, perimeter, and area), leading to slight variance and lower recall (0.9167).</td>
+            </tr>
+            <tr>
+                <td><b>KNN</b></td>
+                <td>Demonstrates solid distance-based performance (<b>Accuracy: 95.61%, AUC: 0.9788, F1: 0.9655</b>). In the standardized 30-dimensional metric space, benign and malignant samples form well-clustered neighborhoods ($k=5$). Performance is slightly lower than SVM due to boundary density overlaps.</td>
+            </tr>
+            <tr>
+                <td><b>Naive Bayes</b></td>
+                <td>Produces high discriminatory ability (<b>AUC: 0.9878, Accuracy: 93.86%, F1: 0.9517</b>). Although the conditional feature independence assumption is violated by geometric relationships among cell parameters, its probabilistic ranking remains strong.</td>
+            </tr>
+            <tr>
+                <td><b>Support Vector Machine</b></td>
+                <td>Ties Logistic Regression for top accuracy (<b>Accuracy: 98.25%, AUC: 0.9950, MCC: 0.9623</b>). The RBF kernel maps features into high-dimensional space to construct an optimal maximum-margin hyperplane, showing outstanding generalization and robustness to outliers.</td>
+            </tr>
+            <tr style="background-color: #FEF3C7;">
+                <td><b>Overall, Winner for your dataset?</b></td>
+                <td><b>Logistic Regression</b> (closely tied with SVM). While both achieve identical Accuracy (0.9825) and F1 (0.9861), Logistic Regression achieves a marginally superior AUC (0.9954 vs 0.9950) with lower computational complexity and direct probabilistic interpretability.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
